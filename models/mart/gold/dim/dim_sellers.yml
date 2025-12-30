@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_sellers
+    description: Seller dimension table
+    columns:
+      - name: seller_id
+        tests:
+          - not_null
+          - unique

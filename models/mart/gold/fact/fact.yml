@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fact_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
+      - name: purchase_at
+        tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: "< estimated_delivery_at"
+      - name: total_amount
+        tests: 
+          - dbt_utils.expression_is_true:
+              arguments:
+                expression: ">= 0"

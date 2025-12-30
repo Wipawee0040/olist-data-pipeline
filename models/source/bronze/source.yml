@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: bronze
+    catalog: ae_main
+    schema: bronze_layer
+    tables:
+      - name: customers
+      - name: orders
+      - name: product
+      - name: sellers
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: geolocation
+      - name: product_category_name_translation

@@ -2,8 +2,7 @@
 
 An end-to-end data engineering project that processes the **Brazilian E-Commerce Public Dataset by Olist**. This pipeline transforms raw CSV data into a clean, analytical **Star Schema** ready for business intelligence, utilizing a modern data stack (Databricks, Spark, and dbt).
 
-![Project Architecture](dbt-dag.png)
-*(Place your dbt DAG or Lineage image here)*
+![fact_orders](https://github.com/user-attachments/assets/f9412a2b-afb3-4f21-a325-3580dde88afb)
 
 ## 🚀 Project Overview
 

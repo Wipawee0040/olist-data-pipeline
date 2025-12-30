@@ -28,13 +28,13 @@ This project adopts a **Hybrid Architecture**, separating raw file processing fr
 
 ```bash
 AE_dbt_transform/
-├── notebooks/           # 🐍 BRONZE & SILVER Layer (Spark/Python)
-│   ├── bronze_layer.py  # Ingest raw CSVs, handle schema drift/multiline
-│   └── silver_layer_1.py# Deduplication and initial cleaning
-├── models/              # 🏗️ GOLD Layer (dbt/SQL)
-│   ├── staging/         # View materialization
-│   └── mart/            # Fact & Dimension tables (Star Schema)
-├── tests/               # Data Quality tests
+├── notebooks/            # 🐍 BRONZE & SILVER Layer (Spark/Python)
+│   ├── bronze_layer.py   # Ingest raw CSVs, handle schema drift/multiline
+│   └── silver_layer_1.py # Deduplication and initial cleaning
+├── models/               # 🏗️ GOLD Layer (dbt/SQL)
+│   ├── staging/          # View materialization
+│   └── mart/             # Fact & Dimension tables (Star Schema)
+├── tests/                # Data Quality tests
 └── dbt_project.yml
 
 🏗️ Architecture & Implementation

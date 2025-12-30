@@ -40,35 +40,21 @@ AE_dbt_transform/
 🏗️ Architecture & Implementation
 1. Ingestion (Bronze Layer) - Apache Spark
 Raw data contained complex issues like multiline records and column shifts that standard SQL could not handle.
-
-Solution: Used PySpark on Databricks to read, clean, and standardize the schema.
-
-Key Code: Located in /notebooks.
+- Solution: Used PySpark on Databricks to read, clean, and standardize the schema.
+- Key Code: Located in /notebooks.
 
 2. Transformation (Gold Layer) - dbt
 Transformed data into a Star Schema optimized for BI tools.
-
-Fact Table: fact_orders (Centralized transactions, revenue, and order status).
-
-Dimension Tables: dim_customers, dim_products, dim_date, etc.
-
-Technique: Used CTEs (Common Table Expressions) for readable code and COALESCE to handle NULL values in financial calculations.
+- Fact Table: fact_orders (Centralized transactions, revenue, and order status).
+- Dimension Tables: dim_customers, dim_products, dim_date, etc.
+- Technique: Used CTEs (Common Table Expressions) for readable code and COALESCE to handle NULL values in financial calculations.
 
 3. Data Quality & Testing
 Data integrity is enforced using dbt tests. The pipeline will fail if critical business logic is violated.
-
-Tests Implemented:
-
-not_null & unique: On Primary Keys.
-
-Business Logic: "Total payment amount must be non-negative" (>= 0).
-
-Relationships: Referential integrity between Fact and Dimensions.
-
-(All checks passed successfully)
-
-📊 Final Result (Star Schema)
-The final fact_orders table consolidates data from orders, payments, and items, ready for analysis.
+- Tests Implemented:
+- not_null & unique: On Primary Keys.
+- Business Logic: "Total payment amount must be non-negative" (>= 0).
+- Relationships: Referential integrity between Fact and Dimensions.
 
 🔗 How to Run
 Clone the repository:

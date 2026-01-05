@@ -25,7 +25,7 @@ The goal of this project is to build a robust data pipeline that handles raw dat
 
 This project adopts a **Hybrid Architecture**, separating raw file processing from warehouse modeling:
 
-```bash
+
 AE_dbt_transform/
 ├── notebooks/            # 🐍 BRONZE & SILVER Layer (Spark/Python)
 │   ├── bronze_layer.py   # Ingest raw CSVs, handle schema drift/multiline
@@ -33,7 +33,7 @@ AE_dbt_transform/
 ├── models/               # 🏗️ GOLD Layer (dbt/SQL)
 │   ├── staging/          # View materialization
 │   └── mart/             # Fact & Dimension tables (Star Schema)
-├── tests/                # Data Quality tests
+|                         # Data Quality tests
 └── dbt_project.yml
 
 🏗️ Architecture & Implementation
@@ -57,21 +57,23 @@ Data integrity is enforced using dbt tests. The pipeline will fail if critical b
 
 🔗 How to Run
 Clone the repository:
-
+```bash
 Bash
 
 git clone [https://github.com/YourUsername/olist-data-pipeline.git](https://github.com/YourUsername/olist-data-pipeline.git)
 Setup Environment:
-
+```
+```bash
 Bash
 
 pip install dbt-databricks
 Run Pipeline:
-
+```
+```bash
 Bash
 
 dbt deps
 dbt run
 dbt test
-
+```
 ** Created by Wipawee Raksasat - 30/12/2025 **

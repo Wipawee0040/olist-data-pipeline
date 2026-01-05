@@ -57,21 +57,21 @@ Data integrity is enforced using dbt tests. The pipeline will fail if critical b
 
 🔗 How to Run
 Clone the repository:
-```bash
-Bash
 
+Bash
+```bash
 git clone [https://github.com/YourUsername/olist-data-pipeline.git](https://github.com/YourUsername/olist-data-pipeline.git)
 Setup Environment:
 ```
-```bash
-Bash
 
+Bash
+```bash
 pip install dbt-databricks
 Run Pipeline:
 ```
-```bash
-Bash
 
+Bash
+```bash
 dbt deps
 dbt run
 dbt test

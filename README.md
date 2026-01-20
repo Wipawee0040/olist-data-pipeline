@@ -25,7 +25,7 @@ The goal of this project is to build a robust data pipeline that handles raw dat
 
 This project adopts a **Hybrid Architecture**, separating raw file processing from warehouse modeling:
 
-
+```
 AE_dbt_transform/
 ├── notebooks/            # 🐍 BRONZE & SILVER Layer (Spark/Python)
 │   ├── bronze_layer.py   # Ingest raw CSVs, handle schema drift/multiline
@@ -34,8 +34,8 @@ AE_dbt_transform/
 │   ├── staging/          # View materialization
 │   └── mart/             # Fact & Dimension tables (Star Schema)
 |                         # Data Quality tests
-└── dbt_project.yml
-
+└── dbt_project.yml 
+```
 🏗️ Architecture & Implementation
 1. Ingestion (Bronze Layer) - Apache Spark
 Raw data contained complex issues like multiline records and column shifts that standard SQL could not handle.

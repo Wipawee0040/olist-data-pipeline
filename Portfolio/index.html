@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Showcase: Olist Data Pipeline</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(to right, #2563eb, #9333ea);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tech-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        .screenshot-container { transition: all 0.3s ease; border: 1px solid #e5e7eb; }
+        .screenshot-container:hover { border-color: #3b82f6; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <span class="font-bold text-xl tracking-tight text-slate-900">Data Engineer Portfolio</span>
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                    <a href="#overview" class="hover:text-blue-600 transition">Overview</a>
+                    <a href="#architecture" class="hover:text-blue-600 transition">Architecture</a>
+                    <a href="#code-showcase" class="hover:text-blue-600 transition">Code & DAGs</a>
+                    <a href="#impact" class="hover:text-blue-600 transition">Impact</a>
+                </div>
+                <a href="https://github.com/Wipawee0040/olist-data-pipeline" target="_blank" class="bg-slate-900 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-700 transition">
+                    <i class="fab fa-github mr-2"></i> View on GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-24 lg:pt-32 lg:pb-40 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center px-3 py-1 rounded-full border border-blue-100 bg-blue-50 text-blue-600 text-xs font-semibold uppercase tracking-wide mb-6">
+                End-to-End Data Engineering Project
+            </div>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6">
+                Olist E-Commerce <br class="hidden md:block" />
+                <span class="gradient-text">Data Pipeline Showcase</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-slate-500">
+                Transforming messy, complex raw data into actionable business insights using a Modern Data Stack (Spark & dbt).
+            </p>
+            
+            <!-- Tags -->
+            <div class="mt-8 flex justify-center gap-3 flex-wrap">
+                <span class="bg-orange-100 text-orange-700 px-3 py-1 rounded text-sm font-medium">Databricks</span>
+                <span class="bg-red-100 text-red-700 px-3 py-1 rounded text-sm font-medium">Apache Spark</span>
+                <span class="bg-orange-50 text-orange-600 px-3 py-1 rounded text-sm font-medium">dbt Core</span>
+                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-sm font-medium">Star Schema</span>
+            </div>
+        </div>
+        
+        <!-- Abstract Background Shape -->
+        <div class="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full z-0 opacity-30 pointer-events-none">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="w-full h-full text-blue-50 fill-current">
+                <polygon points="0,100 100,0 100,100"/>
+            </svg>
+        </div>
+    </header>
+
+    <!-- The Challenge & Solution Grid -->
+    <section id="overview" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div>
+                    <h2 class="text-3xl font-bold text-slate-900 mb-6">The Challenge: Messy Raw Data</h2>
+                    <div class="space-y-6 text-lg text-slate-600">
+                        <p>
+                            Prior to this project, the raw Olist dataset (spanning 9 disparate sources) suffered from significant quality issues, including <span class="text-red-500 font-semibold">multiline records</span> and inconsistent schemas, making immediate business analysis impossible.
+                        </p>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+                            <h3 class="font-bold text-slate-800 mb-2 flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i> My Solution
+                            </h3>
+                            <ul class="space-y-3 text-sm">
+                                <li class="flex items-start">
+                                    <span class="bg-blue-100 text-blue-800 p-1 rounded mr-2 text-xs">Phase 1</span>
+                                    <span>Utilized <strong>Spark</strong> to handle large-scale processing and resolve complex data formatting issues.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="bg-orange-100 text-orange-800 p-1 rounded mr-2 text-xs">Phase 2</span>
+                                    <span>Leveraged <strong>dbt</strong> to build robust business logic and implement automated testing.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Architecture Image Placeholder -->
+                <div class="relative group screenshot-container rounded-2xl overflow-hidden bg-white">
+                    <div class="absolute top-0 left-0 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-br-lg z-10">Architecture</div>
+                    <!-- INSERT YOUR IMAGE: image_682ead.png here -->
+                    <img src="ex.lineage databrick.jpg" alt="Architecture Diagram" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Architecture+Diagram';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Dive: Code & Lineage -->
+    <section id="code-showcase" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900">Technical Deep Dive</h2>
+                <p class="mt-4 text-slate-500">A look under the hood: From data ingestion to automated documentation.</p>
+            </div>
+
+            <div class="space-y-24">
+                <!-- Step 1: Spark Processing -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 relative rounded-xl shadow-lg overflow-hidden border border-slate-200">
+                        <div class="bg-slate-800 px-4 py-2 flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <span class="text-xs text-slate-400 ml-2">bronze_to_silver.py</span>
+                        </div>
+                        <!-- INSERT YOUR IMAGE: spark_customer_silver.jpg here -->
+                        <img src="spark_customer_silver.jpg" alt="Spark Code" class="w-full" onerror="this.src='https://placehold.co/600x400/1e293b/cbd5e1?text=Spark+Code+Snippet';">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-fire text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">1. Heavy Lifting with Spark</h3>
+                        <p class="text-slate-600 mb-4">
+                            Deployed PySpark on Databricks to ingest raw data (Bronze) and perform heavy cleaning and standardization to produce a refined Silver Layer.
+                        </p>
+                        <ul class="text-sm text-slate-500 space-y-2">
+                            <li><i class="fas fa-code text-slate-400 mr-2"></i> Handling Schema Drift automatically.</li>
+                            <li><i class="fas fa-code text-slate-400 mr-2"></i> Resolving multiline CSV parsing issues.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 2: dbt Transformation -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-cubes text-orange-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">2. Modeling with dbt</h3>
+                        <p class="text-slate-600 mb-4">
+                            Transformed data into a <strong>Star Schema</strong> optimized for high-performance BI queries.
+                        </p>
+                        <p class="text-slate-600">
+                            The Lineage Graph visualizes the clear data flow from Source -> Staging -> Fact/Dim Tables, ensuring full traceability.
+                        </p>
+                    </div>
+                    <div class="relative rounded-xl shadow-lg overflow-hidden border border-slate-200 group">
+                        <!-- INSERT YOUR IMAGE: dbt-dag.png here -->
+                        <img src="dbt-dag.png" alt="dbt Lineage Graph" class="w-full transform group-hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x400/fff7ed/9a3412?text=dbt+Lineage+Graph';">
+                    </div>
+                </div>
+
+                <!-- Step 3: Documentation & Testing -->
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 relative rounded-xl shadow-lg overflow-hidden border border-slate-200">
+                         <!-- INSERT YOUR IMAGE: dbt_doc_gen.jpg here -->
+                        <img src="dbt_doc_gen.jpg" alt="dbt Documentation" class="w-full" onerror="this.src='https://placehold.co/600x400/f0f9ff/0369a1?text=Auto-generated+Docs';">
+                    </div>
+                    <div class="order-1 md:order-2">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-book-open text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">3. Automated Docs & Quality</h3>
+                        <p class="text-slate-600 mb-4">
+                            Beyond just processing, the pipeline generates an automated <strong>Data Dictionary</strong>, empowering Data Analysts to understand metrics without constant dependency on Engineers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact & Stats -->
+    <section id="impact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h2 class="text-3xl font-bold mb-12">Project Impact</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-8 bg-slate-800 rounded-2xl border border-slate-700">
+                    <div class="text-4xl font-bold text-blue-400 mb-2">100%</div>
+                    <div class="text-lg font-medium">Automated</div>
+                    <p class="text-slate-400 text-sm mt-2">Eliminated manual data preparation tasks.</p>
+                </div>
+                <div class="p-8 bg-slate-800 rounded-2xl border border-slate-700">
+                    <div class="text-4xl font-bold text-green-400 mb-2">0</div>
+                    <div class="text-lg font-medium">Silent Failures</div>
+                    <p class="text-slate-400 text-sm mt-2">Proactively caught data quality issues with dbt tests.</p>
+                </div>
+                <div class="p-8 bg-slate-800 rounded-2xl border border-slate-700">
+                    <div class="text-4xl font-bold text-purple-400 mb-2">BI Ready</div>
+                    <div class="text-lg font-medium">Star Schema</div>
+                    <p class="text-slate-400 text-sm mt-2">Delivered analytics-ready data for immediate insight generation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-slate-600 mb-4">Developed by <span class="font-bold text-slate-900">Wipawee Raksasat</span></p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/Wipawee0040/olist-data-pipeline" target="_blank" class="text-slate-400 hover:text-slate-900 transition"><i class="fab fa-github text-2xl"></i></a>
+                <a href="https://www.linkedin.com/in/wipawee-raksasat-291433345" target="_blank" class="text-slate-400 hover:text-blue-600 transition"><i class="fab fa-linkedin text-2xl"></i></a>
+                <a href="mailto:benion40710@gmail.com" class="text-slate-400 hover:text-red-500 transition"><i class="fas fa-envelope text-2xl"></i></a>
+            </div>
+            <p class="text-xs text-slate-400 mt-8">© 2024 Olist Data Pipeline Showcase. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
